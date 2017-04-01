@@ -28,6 +28,14 @@ span {
 	font-size: 18px;
 	vertical-align: 10px;
 }
+footer {
+	position: absolute;
+	bottom: 0;
+	z-index: 3;
+	max-width: 200px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
 #firstHeading {
 	margin-bottom: 3px;
 }
@@ -60,10 +68,6 @@ span {
 .gm-style-iw {
 	width: 80%;
 }
-.icons {
-	margin-top: 46vh;
-	margin-left: 15px;
-}
 .icon {
 	width: 35px;
 }
@@ -71,6 +75,9 @@ span {
 
 /* Responsiveness */
 @media only screen and (max-width : 670px) {
+	footer {
+		bottom: -250px;
+	}
 	.locationList {
 		width: 100vw;
 		background-color: rgba(255, 255, 255, 0.92);
@@ -86,12 +93,6 @@ span {
 	.form-control {
 		width: 99.5vw;
 		padding: 0;
-		text-align: center;
-	}
-	.icons {
-		margin-top: 8vh;
-		margin-bottom: 15px;
-		width: 95vw;
 		text-align: center;
 	}
 }
