@@ -23,4 +23,4 @@ each location's Yelp rating and top review (by [Yelp Sort criteria](https://www.
 
 2. Open a browser and visit localhost:8080
 
-###### This app is powered by ![alt text](icons/yelp.png "Yelp Logo") ![alt text](icons/google.png "Google Logo")
+###### This app is powered by ![alt text](yelp.png "Yelp Logo") ![alt text](google.png "Google Logo")
