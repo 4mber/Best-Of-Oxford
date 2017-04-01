@@ -5,7 +5,7 @@ It is fully responsive and works on all devices. Made possible through knockout.
 this app features a unique Google map including custom colors, a searchable list of locations, and custom markers including a link to the location's Yelp profile page,
 each location's Yelp rating and top review (by [Yelp Sort criteria](https://www.quora.com/How-is-the-order-of-Yelp-Sort-determined).)
 
-Here's the demo!
+Here's the demo...
 
 ##To run the application:
 
