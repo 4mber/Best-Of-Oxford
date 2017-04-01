@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Best of Oxford!</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<input class="form-control" placeholder="Best of Oxford!" type="text" data-bind='value:searchFilter,valueUpdate: "afterkeydown"'>
+	<div class="container" id="container">
+		<div class="locationList" id="locationList">
+			<ul data-bind="foreach: markers">
+	            <a data-bind="click: function(data, event) { $parent.updateList(yelp_id, data, event) }, attr: {href: yelp_id }">
+	                <li data-bind="text: title, visible:getVisible()"></li>
+	            </a>
+        	</ul>
+		</div>
+		<div class="icons">
+			<span>Powered By</span>
+			<img class="icon" src="icons/yelp.png"><img class="icon" src="icons/google.png">
+		</div>
+	</div>
+	<div class="map" id="map"></div>
+	<script async src="js/oauth.min.js"></script>
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXltfb9OboFvnFtOCErVDWgYm7ZEPg8sI&callback=init"></script>
+	<script async src="js/jquery-3.2.0.min.js"></script>
+	<script async type="text/javascript" src="js/knockout-3.4.2.js"></script>
+    <script async src="js/script.js"></script>
+</body>

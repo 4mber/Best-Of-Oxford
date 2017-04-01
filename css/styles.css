@@ -1,0 +1,97 @@
+/* Main Styling */
+html,
+body {
+	margin: 0;
+}
+h2 {
+	text-align: center;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	color: blue;
+}
+ul {
+	list-style: none;
+	text-align: center;
+	padding-left: 0;
+	padding-top: 5px;
+}
+li {
+	padding-bottom: 5px;
+}
+span {
+	font-weight: lighter;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 18px;
+	vertical-align: 10px;
+}
+#firstHeading {
+	margin-bottom: 3px;
+}
+.container {
+	width: 200px;
+	height: 94%;
+	position: absolute;
+	z-index: 2;
+	background-color: rgba(255, 255, 255, 0.92);
+	font-family: 'Helvetica Neue', sans-serif;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.form-control {
+	height: 35px;
+	font-size: 1.5em;
+	padding: 5px 10px;
+	width: 98.3%;
+	display: flex;
+}
+.map {
+	height: 94%;
+	width: 100%;
+	margin: 0;
+	position: absolute;
+	z-index: 1;
+}
+.gm-style-iw {
+	width: 80%;
+}
+.icons {
+	margin-top: 46vh;
+	margin-left: 15px;
+}
+.icon {
+	width: 35px;
+}
+
+
+/* Responsiveness */
+@media only screen and (max-width : 670px) {
+	.locationList {
+		width: 100vw;
+		background-color: rgba(255, 255, 255, 0.92);
+		margin-top: 60vh;		
+	}
+	.map {
+		height: 60%;
+	}
+	.container {
+		width: 0;
+		padding: 0;
+	}
+	.form-control {
+		width: 99.5vw;
+		padding: 0;
+		text-align: center;
+	}
+	.icons {
+		margin-top: 8vh;
+		margin-bottom: 15px;
+		width: 95vw;
+		text-align: center;
+	}
+}
