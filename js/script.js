@@ -114,9 +114,9 @@ function init() {
             self.markers().forEach(function(currentmarker) {
                 if (currentmarker.yelp_id === businessId) {
                     selectedMarker = currentmarker;
-                    currentmarker.setIcon('http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png');
+                    currentmarker.setIcon('https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png');
                 } else {
-                    currentmarker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+                    currentmarker.setIcon('https://maps.google.com/mapfiles/ms/icons/blue-dot.png');
                 }
             });
 
@@ -178,7 +178,7 @@ function init() {
             // Add a new marker to the markers array...
             self.markers.push(new google.maps.Marker(location));
             self.markers()[self.markers().length - 1].setAnimation(null);
-            self.markers()[self.markers().length - 1].setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+            self.markers()[self.markers().length - 1].setIcon('https://maps.google.com/mapfiles/ms/icons/blue-dot.png');
             // And add the click function & animation to the new marker...
             self.markers()[self.markers().length - 1].addListener('click', function() {
                 var marker = this;
