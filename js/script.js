@@ -139,7 +139,7 @@ function init() {
                             var theReview;
 			    self.reviews ? theReview = self.reviews.push({
                             review: review.excerpt + " - " + review.user.name
-                            }); : theReview = "No reviews available."
+                            }) : theReview = "No reviews available.";
                     });
 
                     // Creates content for inside of info windows...
