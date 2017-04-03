@@ -150,11 +150,11 @@ function init() {
                         '<p>' + results.reviews[results.reviews.length - 1].excerpt + " - " + results.reviews[results.reviews.length - 1].user.name + '</p>' +
                         '</div>' +
                         '</div>';
-                    if (self.InfoMarker != null) {
-                        self.InfoMarker.close();
+                    if (self.infoMarker != null) {
+                        self.infoMarker.close();
                     }
 		    self.infoWindow.setContent(self.contentString);
-                    self.InfoMarker.open(mapview.map, selectedMarker);
+                    self.infoMarker.open(mapview.map, selectedMarker);
               	    },
                 error: function(err) {
                     alert("Error! Please refresh or try again later.");
