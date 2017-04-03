@@ -137,9 +137,9 @@ function init() {
                     self.reviews([]);
                     results.reviews.forEach(function(review) {
                             var theReview;
-			    theReview = self.reviews.push({
+			    self.reviews ? theReview = self.reviews.push({
                             review: review.excerpt + " - " + review.user.name
-                            }); || "No reviews available."
+                            }); : theReview = "No reviews available."
                     });
 
                     // Creates content for inside of info windows...
