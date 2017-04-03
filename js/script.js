@@ -70,7 +70,7 @@ function init() {
 			}
 		];
         var self = this
-        self.infoMarker = ko.observable();
+        self.infoMarker = null;
         self.reviews = ko.observableArray();
         self.location = ko.observableArray();
 
@@ -84,7 +84,6 @@ function init() {
         self.updateList = function(businessId) {
             self.yelp(businessId, null);
         };
-	this.infoWindow = new google.maps.InfoWindow({content: self.contentString});
 
         // Our base Yelp API integration...
         self.yelp = function(businessId, marker) {
@@ -150,10 +149,10 @@ function init() {
                         '<p>' + results.reviews[results.reviews.length - 1].excerpt + " - " + results.reviews[results.reviews.length - 1].user.name + '</p>' +
                         '</div>' +
                         '</div>';
-                    if (self.infoMarker != null) {
-                        self.infoMarker.close();
+                    if (self.InfoMarker != null) {
+                        self.InfoMarker.close();
                     }
-		    self.infoWindow.setContent(self.contentString);
+		    self.InfoWindow.setContent(self.contentString);
                     self.infoMarker.open(mapview.map, selectedMarker);
               	    },
                 error: function(err) {
