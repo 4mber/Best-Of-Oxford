@@ -155,7 +155,7 @@ function init() {
 		    self.InfoMarker = new google.maps.InfoWindow({
                         content: contentString
                     });
-                    self.infoMarker.open(mapview.map, selectedMarker);
+                    self.InfoMarker.open(mapview.map, selectedMarker);
               	    },
                 error: function(err) {
                     alert("Error! Please refresh or try again later.");
