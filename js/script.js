@@ -152,7 +152,9 @@ function init() {
                     if (self.InfoMarker != null) {
                         self.InfoMarker.close();
                     }
-		    self.InfoWindow.setContent(self.contentString);
+		    self.InfoMarker = new google.maps.InfoWindow({
+                        content: contentString
+                    });
                     self.infoMarker.open(mapview.map, selectedMarker);
               	    },
                 error: function(err) {
