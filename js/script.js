@@ -84,6 +84,7 @@ function init() {
         self.updateList = function(businessId) {
             self.yelp(businessId, null);
         };
+	this.infoWindow = new google.maps.InfoWindow({content: self.contentString});
 
         // Our base Yelp API integration...
         self.yelp = function(businessId, marker) {
@@ -101,7 +102,7 @@ function init() {
             var parameters = {
                 oauth_consumer_key: auth.consumerKey,
                 oauth_token: auth.accessToken,
-                oauth_nonce: nonce_generate(),
+                oauth_nonce: nonceGenerate(),
                 oauth_timestamp: Math.floor(Date.now() / 1000),
                 oauth_signature_method: 'HMAC-SHA1',
                 oauth_version: '1.0',
@@ -135,14 +136,15 @@ function init() {
                     self.location(results.location.display_address);
                     self.reviews([]);
                     results.reviews.forEach(function(review) {
-                        self.reviews.push({
+                            var theReview;
+			    theReview = self.reviews.push({
                             review: review.excerpt + " - " + review.user.name
-                        });
+                            }); || theReview = "No reviews available."
                     });
 
                     // Creates content for inside of info windows...
                     var contentString = '<div class="content">' +
-                        '<h1 id="firstHeading" class="firstHeading"> <a target="_blank" href="' + results.url + '">' + results.name + '</a></h1>' +
+                        '<h1 id="first-heading" class="first-heading"> <a target="_blank" href="' + results.url + '">' + results.name + '</a></h1>' +
                         '<div id="bodyContent">' +
                         '<img src="' + results.rating_img_url + '">' +
                         '<p>' + results.reviews[results.reviews.length - 1].excerpt + " - " + results.reviews[results.reviews.length - 1].user.name + '</p>' +
@@ -151,12 +153,10 @@ function init() {
                     if (self.InfoMarker != null) {
                         self.InfoMarker.close();
                     }
-                    self.InfoMarker = new google.maps.InfoWindow({
-                        content: contentString
-                    });
+		    self.infoWindow.setContent(self.contentString);
                     self.InfoMarker.open(mapview.map, selectedMarker);
-                },
-                fail: function() {
+              	    },
+                error: function(err) {
                     alert("Error! Please refresh or try again later.");
                 }
             });
@@ -244,11 +244,15 @@ function init() {
     ko.applyBindings(mapview);
 }
 
-function nonce_generate(length) {
+function nonceGenerate(length) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return text;
+}
+
+function errorHandler() {
+	alert("There was an error loading Google Maps. Please refresh or try again later!");
 }
