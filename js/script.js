@@ -69,7 +69,7 @@ function init() {
 				]
 			}
 		];
-        var self = this
+        var self = this;
         self.infoMarker = null;
         self.reviews = ko.observableArray();
         self.location = ko.observableArray();
