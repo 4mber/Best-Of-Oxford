@@ -10,7 +10,7 @@
 
 	<input class="form-control" placeholder="Best of Oxford!" type="text" data-bind='value:searchFilter,valueUpdate: "afterkeydown"'>
 	<div class="container" id="container">
-		<div class="locationList" id="locationList">
+		<div class="location-list" id="location-list">
 			<ul data-bind="foreach: markers">
 	            <a data-bind="click: function(data, event) { $parent.updateList(yelp_id, data, event) }, attr: {href: yelp_id }">
 	                <li data-bind="text: title, visible:getVisible()"></li>
@@ -23,9 +23,9 @@
 		<span>Powered By</span>
 		<a href="https://www.yelp.com/oxford" target="_blank"><img class="icon" src="yelp.png"></a><a href="https://www.google.co.uk/maps" target="_blank"><img class="icon" src="google.png"></a>
 	</footer>
-	<script async src="js/oauth.min.js"></script>
-	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-0FYApirit2uJYZksh3hmmKv5PKLJScY&callback=init"></script>
-	<script async src="js/jquery-3.2.0.min.js"></script>
-	<script async type="text/javascript" src="js/knockout-3.4.2.js"></script>
-    <script async src="js/script.js"></script>
+	<script src="js/oauth.min.js"></script>
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+    	<script src="js/script.js"></script>
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-0FYApirit2uJYZksh3hmmKv5PKLJScY&callback=init" onerror="errorHandler()"></script>
 </body>
