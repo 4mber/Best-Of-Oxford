@@ -5,6 +5,8 @@ It is fully responsive and works on all devices. Made possible through knockout.
 this app features a unique Google map including custom colors, a searchable list of locations, and custom markers including a link to the location's Yelp profile page,
 each location's Yelp rating and top review (by [Yelp Sort criteria](https://www.quora.com/How-is-the-order-of-Yelp-Sort-determined).)
 
+[Here's the demo!](https://4mber.github.io/Best-Of-Oxford/)
+
 ## To run the application:
 
 1. Download this repository's zip file, or clone this repository onto your local workstation.
@@ -12,5 +14,5 @@ each location's Yelp rating and top review (by [Yelp Sort criteria](https://www.
 
 
 
-
 ###### This app is powered by ![alt text](yelp.png "Yelp Logo") ![alt text](google.png "Google Logo")
+###### This project was created as a requirement for the Udacity Front-End Web Developer Nanodegree!
